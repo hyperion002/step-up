@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Step Up</string>
+
+    <string name="stats">Stats</string>
+
+    <!--Progress Fragment layout resources-->
+    <string name="calorie_burned">Calorie burned</string>
+    <string name="distance_travelled">Distance travelled</string>
+    <string name="carbon_dioxide_saved">Carbon dioxide saved</string>
+    <string name="target">Target</string>
+    <string name="daily">Daily</string>
 </resources>

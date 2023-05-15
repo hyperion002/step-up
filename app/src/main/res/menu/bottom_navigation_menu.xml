@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/item_forest_fragment"
-        android:icon="@drawable/ic_forest_fragment"
-        android:title="@string/forest" />
-
-    <item
         android:id="@+id/item_progress_fragment"
         android:icon="@drawable/ic_progress_fragment"
-        android:title="@string/tree" />
+        android:title="@string/daily" />
 
     <item
         android:id="@+id/item_stats_fragment"
         android:icon="@drawable/ic_stats_fragment"
         android:title="@string/stats" />
+
+    <item
+        android:id="@+id/item_target_fragment"
+        android:icon="@drawable/ic_target_fragment"
+        android:title="@string/target"/>
 </menu>
