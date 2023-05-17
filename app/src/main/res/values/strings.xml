@@ -1,12 +1,16 @@
 <resources>
     <string name="app_name">Step Up</string>
 
+    <!--Fragment Labels for BottomNavigationMenu, NavGraph & AppBar-->
     <string name="stats">Stats</string>
+    <string name="progress">Progress</string>
+    <string name="target">Target</string>
 
-    <!--Progress Fragment layout resources-->
+    <!--ProgressFragment & StatsFragment layout resources-->
+    <string name="step_count">Step count</string>
     <string name="calorie_burned">Calorie burned</string>
     <string name="distance_travelled">Distance travelled</string>
     <string name="carbon_dioxide_saved">Carbon dioxide saved</string>
-    <string name="target">Target</string>
-    <string name="daily">Daily</string>
+    <string name="previous_day">Previous day</string>
+    <string name="next_day">Next day</string>
 </resources>
