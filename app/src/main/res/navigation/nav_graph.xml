@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/statsFragment">
 
+    <fragment
+        android:id="@+id/progressFragment"
+        android:name="com.example.stepup.progress.ProgressFragment"
+        android:label="@string/progress"
+        tools:layout="@layout/fragment_progress" />
+
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.example.stepup.stats.StatsFragment"
+        android:label="@string/stats"
+        tools:layout="@layout/fragment_stats" />
 </navigation>

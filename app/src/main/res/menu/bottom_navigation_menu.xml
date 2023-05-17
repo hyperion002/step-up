@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/item_progress_fragment"
+        android:id="@+id/progressFragment"
         android:icon="@drawable/ic_progress_fragment"
-        android:title="@string/daily" />
+        android:title="@string/progress" />
 
     <item
-        android:id="@+id/item_stats_fragment"
+        android:id="@+id/statsFragment"
         android:icon="@drawable/ic_stats_fragment"
         android:title="@string/stats" />
 
+<!--    TODO-->
     <item
         android:id="@+id/item_target_fragment"
         android:icon="@drawable/ic_target_fragment"
