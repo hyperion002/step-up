@@ -10,9 +10,8 @@
         android:icon="@drawable/ic_stats_fragment"
         android:title="@string/stats" />
 
-<!--    TODO-->
     <item
-        android:id="@+id/item_target_fragment"
+        android:id="@+id/targetFragment"
         android:icon="@drawable/ic_target_fragment"
         android:title="@string/target"/>
 </menu>

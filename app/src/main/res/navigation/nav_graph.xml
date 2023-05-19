@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/statsFragment">
+    app:startDestination="@id/progressFragment">
 
     <fragment
         android:id="@+id/progressFragment"
@@ -16,4 +16,11 @@
         android:name="com.example.stepup.stats.StatsFragment"
         android:label="@string/stats"
         tools:layout="@layout/fragment_stats" />
+
+    <fragment
+        android:id="@+id/targetFragment"
+        android:name="com.example.stepup.target.TargetFragment"
+        android:label="@string/target"
+        tools:layout="@layout/fragment_target" />
+
 </navigation>

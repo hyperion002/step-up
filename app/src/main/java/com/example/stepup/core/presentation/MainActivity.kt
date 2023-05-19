@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
 
+    // Permissions required by the app
     private val permissionList = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.topAppBar)
 
+        // Function to request permissions
         requestPermissions()
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -38,7 +40,8 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.progressFragment,
-                R.id.statsFragment
+                R.id.statsFragment,
+                R.id.targetFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
