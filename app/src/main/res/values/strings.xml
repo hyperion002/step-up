@@ -13,4 +13,6 @@
     <string name="carbon_dioxide_saved">Carbon dioxide saved</string>
     <string name="previous_day">Previous day</string>
     <string name="next_day">Next day</string>
+    <string name="details">Details</string>
+    <string name="summary">Summary</string>
 </resources>
