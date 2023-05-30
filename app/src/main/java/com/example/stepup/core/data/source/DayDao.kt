@@ -1,5 +1,6 @@
 package com.example.stepup.core.data.source
 
+import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Update
 import androidx.room.Upsert
@@ -8,6 +9,7 @@ import com.example.stepup.core.domain.model.DayTarget
 import kotlinx.coroutines.flow.Flow
 import java.time.LocalDate
 
+@Dao
 interface DayDao {
     @Query("SELECT * FROM day ORDER BY date ASC LIMIT 1")
     fun getFirstDay(): Flow<Day?>
