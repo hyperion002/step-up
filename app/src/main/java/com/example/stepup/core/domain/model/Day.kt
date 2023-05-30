@@ -1,8 +1,8 @@
 package com.example.stepup.core.domain.model
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.stepup.target.domain.model.Target
 import java.time.LocalDate
 
 @Entity(tableName = "day")
@@ -13,10 +13,24 @@ data class Day(
     val goal: Int,
     val height: Int = 170,
     val weight: Int = 54,
-    @ColumnInfo(name = "step_length") val stepLength: Int = 72,
+    val stepLength: Int = 72,
     val pace: Double = 1.0
 ) {
-    companion object
+    companion object {
+        fun of(date: LocalDate, target: Target, steps: Int = 0): Day {
+            return target.run {
+                Day(
+                    date = date,
+                    steps = steps,
+                    goal = dailyGoal,
+                    height = height,
+                    weight = weight,
+                    stepLength = stepLength,
+                    pace = pace
+                )
+            }
+        }
+    }
 
     val distanceTravelled
         get() = run {
@@ -35,5 +49,3 @@ data class Day(
             steps * 0.1925 / 1000.0
         }
 }
-
-// TODO: Move to companion object scope inside the class
