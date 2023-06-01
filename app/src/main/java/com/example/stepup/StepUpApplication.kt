@@ -6,12 +6,16 @@ import androidx.room.Room
 import com.example.stepup.core.data.source.StepUpDatabase
 import com.example.stepup.target.data.source.TargetStore
 import com.example.stepup.target.data.source.TargetStoreImpl
+import kotlinx.coroutines.flow.MutableStateFlow
+import java.time.LocalDate
 
 // TODO
 class StepUpApplication: Application() {
 
     lateinit var targetStore: TargetStore
     lateinit var stepUpDatabase: StepUpDatabase
+
+    val currentDate = MutableStateFlow<LocalDate>(LocalDate.now())
 
     override fun onCreate() {
         super.onCreate()
