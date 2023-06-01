@@ -20,8 +20,8 @@ class DayRepositoryImpl(private val dao: DayDao) : DayRepository {
         return dao.getAllDays()
     }
 
-    override fun getDays(start: LocalDate, endInclusive: LocalDate): Flow<List<Day>> {
-        return dao.getDays(start, endInclusive)
+    override fun getDays(range: ClosedRange<LocalDate>): Flow<List<Day>> {
+        return dao.getDays(range.start, range.endInclusive)
     }
 
     override suspend fun upsertDay(day: Day) {
