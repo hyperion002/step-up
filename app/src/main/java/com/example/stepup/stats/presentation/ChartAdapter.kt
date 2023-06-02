@@ -1,5 +1,6 @@
 package com.example.stepup.stats.presentation
 
+import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.AttrRes
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.stepup.databinding.ItemChartBarBinding
+import com.example.stepup.stats.util.getThemeColor
 
 class ChartAdapter<T>(
     private val listener: OnValueSelected<T>
@@ -30,10 +32,12 @@ class ChartAdapter<T>(
             binding.root.setOnClickListener { listener.onSelect(chartValue) }
             binding.textSupporting.apply {
                 text = chartValue.label
-                // TODO: Set color
+                val color = context.getThemeColor(chartValue.textColor)
+                setTextColor(color)
             }
             binding.barFilled.apply {
-                // TODO: Set color
+                val color = context.getThemeColor(chartValue.barColor)
+                backgroundTintList = ColorStateList.valueOf(color)
                 val params = layoutParams as ConstraintLayout.LayoutParams
                 params.matchConstraintPercentHeight = chartValue.value.toFloat()
                 requestLayout()
