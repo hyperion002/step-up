@@ -1,6 +1,7 @@
 package com.example.stepup.core.presentation
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -8,6 +9,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -15,6 +17,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.stepup.R
 import com.example.stepup.databinding.ActivityMainBinding
+import com.example.stepup.service.StepCounterService
 
 class MainActivity : AppCompatActivity() {
     private lateinit var requestMultiplePermissionLauncher: ActivityResultLauncher<Array<String>>
@@ -26,12 +29,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.topAppBar)
 
-        // Function to request permissions
         requestPermissions()
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -46,6 +49,13 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.bottomNavigation.setupWithNavController(navController)
+
+        startStepCounterService()
+    }
+
+    private fun startStepCounterService() {
+        val intent = Intent(this, StepCounterService::class.java)
+        ContextCompat.startForegroundService(this, intent)
     }
 
     private fun requestPermissions() {
