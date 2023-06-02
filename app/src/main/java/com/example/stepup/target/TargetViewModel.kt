@@ -37,7 +37,6 @@ class TargetViewModel(
         }.launchIn(viewModelScope)
     }
 
-    // TODO
     companion object Factory : ViewModelProvider.Factory {
         @Suppress("UNCHECKED_CAST")
         override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
