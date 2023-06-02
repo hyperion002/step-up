@@ -9,7 +9,6 @@ import com.example.stepup.target.data.source.TargetStoreImpl
 import kotlinx.coroutines.flow.MutableStateFlow
 import java.time.LocalDate
 
-// TODO
 class StepUpApplication: Application() {
 
     lateinit var targetStore: TargetStore
